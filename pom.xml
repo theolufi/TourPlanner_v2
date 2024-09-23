@@ -49,6 +49,27 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    		<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<version>1.18.26</version> <!-- Check for the latest version -->
+    		<scope>provided</scope>
+		</dependency>
+		<dependency>
+    		<groupId>org.modelmapper</groupId>
+    		<artifactId>modelmapper</artifactId>
+    		<version>3.1.1</version> <!-- Check for the latest version -->
+		</dependency>
+				<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>kernel</artifactId>
+			<version>7.1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>layout</artifactId>
+			<version>7.1.10</version>
+		</dependency>
 	</dependencies>
 
 	<build>
