@@ -1,17 +1,11 @@
 package com.project.tourplanner.tour;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;;
+
 
 @Entity
 @Table(name = "tourLogs")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
+
 public class TourLog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -40,6 +34,20 @@ public class TourLog {
 
     @Column(name = "rating")
     private String rating;
+    public TourLog(){
+        
+    }
+    public TourLog(long tourID, String date, String time, String comment, String difficulty, String totalDistance,
+            String totalTime, String rating) {
+        tourID = this.tourID;
+        date = this.date;
+        time = this.time;
+        comment = this.comment;
+        difficulty = this.difficulty;
+        totalDistance = this.totalDistance;
+        totalTime = this.totalTime;
+        rating = this.rating;
+    }
 
     // Getters and Setters
     public Long getId() {

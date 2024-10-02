@@ -1,6 +1,7 @@
 package com.project.tourplanner.tour;
 
-import jakarta.persistence.*;;
+import jakarta.persistence.*;
+
 
 @Entity
 @Table(name = "tours")
@@ -34,6 +35,20 @@ public class Tour {
     private String routeInfo;
 
     //getters and setters
+    public Tour(){
+        
+    }
+    public Tour(String name, String tourDescription, String tourFrom, String tourTo, String transportType, String tourDistance,
+            String estTime, String routeInfo) {
+                name = this.name;
+                tourDescription = this.tourDescription;
+                tourFrom = this.tourFrom;
+                tourTo = this.tourTo;
+                transportType = this.transportType;
+                tourDistance = this.tourDistance;
+                estTime = this.estTime;
+                routeInfo = this.routeInfo; 
+    }
 
     public Long getID(){
         return id;

@@ -1,10 +1,6 @@
 package com.project.tourplanner.tour;
 
-import lombok.Builder;
-import lombok.Data;
 
-@Data
-@Builder
 public class TourLogDto {
     private Long id;
     private Long tourID;

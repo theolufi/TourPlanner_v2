@@ -10,25 +10,23 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class TourService {
     @Autowired
     private TourDtoMapper tourDtoMapper;
 
     public TourDto getTours() {
-        Tour tour = Tour.builder()
-                .name("This is a tour")
-                .tourDescription("Description")
-                .tourFrom("From") // Changed from "fromm" to "tourFrom"
-                .tourTo("To")     // Changed from "too" to "tourTo"
-                .transportType("Train")
-                .tourDistance("2km")
-                .estTime("2h")    // Changed from "estimatedTime" to "estTime"
-                .routeInfo("Route Info") // Added routeInfo if needed
-                .build();
+        Tour tour = new Tour(
+            "This is a tour",
+            "Description",
+            "From",
+            "To",
+            "Train",
+            "2km",
+            "2h",
+            "Route Info"
+            );
 
         TourDto tourDto = tourDtoMapper.mapTourToTourDto(tour);
         return tourDto;

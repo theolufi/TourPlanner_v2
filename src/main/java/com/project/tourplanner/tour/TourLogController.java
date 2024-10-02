@@ -2,6 +2,7 @@ package com.project.tourplanner.tour;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/tourlogs")
 public class TourLogController {
     
@@ -23,12 +25,12 @@ public class TourLogController {
         return tourLogRepository.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("tourlogs/{id}")
     public TourLog getTourLogByID(@PathVariable Long id) {
         return tourLogRepository.findById(id).orElse(null);
     }
     
-    @PostMapping
+    @PostMapping("/createTourLog")
     public TourLog createTourLog(@RequestBody TourLog tourLog) {
         return tourLogRepository.save(tourLog);
     }
@@ -53,7 +55,7 @@ public class TourLogController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("deleteTourLog/{id}")
     public String deleteTourLog(@PathVariable Long id) {
         try {
             tourLogRepository.deleteById(id);
